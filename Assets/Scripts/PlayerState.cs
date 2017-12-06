@@ -8,11 +8,7 @@ public abstract class PlayerState
 
 	public abstract void Update ();
 
-	public abstract void AnimationFrameWindowOpened ();
+	public abstract void OnEnter ();
 
-	public abstract void AnimationFrameWindowClosed ();
-
-	public abstract void HitFrameOpened ();
-
-	public abstract void HitFrameClosed ();
+	public abstract void OnExit ();
 }

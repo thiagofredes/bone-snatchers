@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ThirdPersonCameraController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AttackAnimationSystem\ComboController.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="115" Column="16" />
-      <File FileName="Assets\Scripts\PlayerStates\Running.cs" Line="29" Column="55" />
-      <File FileName="Assets\Scripts\PlayerStates\Fighting.cs" Line="67" Column="32" />
-      <File FileName="Assets\Scripts\ThirdPersonCameraController.cs" Line="84" Column="72" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="75" Column="1" />
+      <File FileName="Assets\Scripts\PlayerStates\Fighting.cs" Line="28" Column="43" />
+      <File FileName="Assets\Scripts\AttackAnimationSystem\ComboController.cs" Line="47" Column="16" />
+      <File FileName="Assets\Scripts\MoveHitboxController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

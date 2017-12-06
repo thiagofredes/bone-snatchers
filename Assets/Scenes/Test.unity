@@ -499,6 +499,49 @@ Transform:
   m_Father: {fileID: 1859890146}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &477833180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 477833182}
+  - component: {fileID: 477833181}
+  m_Layer: 0
+  m_Name: CursorLockState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &477833181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 477833180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fec4eba165d4094ca8dcc78beec29b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockMode: 1
+  visible: 0
+  applyOnStart: 1
+--- !u!4 &477833182
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 477833180}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9138197, y: 1.6106473, z: 0.35697722}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &517595091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,6 +1713,7 @@ GameObject:
   - component: {fileID: 1038980383}
   - component: {fileID: 1038980382}
   - component: {fileID: 1038980385}
+  - component: {fileID: 1038980386}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -1735,8 +1779,9 @@ MonoBehaviour:
   animator: {fileID: 1934768686}
   characterController: {fileID: 1038980383}
   playerCollider: {fileID: 1038980382}
-  movementSpeed: 5
+  movementSpeed: 8
   hitboxController: {fileID: 1038980385}
+  comboController: {fileID: 1038980386}
   health: 20
 --- !u!114 &1038980385
 MonoBehaviour:
@@ -1754,6 +1799,22 @@ MonoBehaviour:
     hitbox: {fileID: 701731191}
   - parentTrigger: Attack2
     hitbox: {fileID: 701731191}
+--- !u!114 &1038980386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1038980380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4322e4fc42746704e92d0c4d2af999ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationTriggers:
+  - Attack1
+  - Attack2
+  missedWindowAnimationTrigger: EndFight
+  animator: {fileID: 1934768686}
 --- !u!1 &1058608285
 GameObject:
   m_ObjectHideFlags: 0
@@ -2949,12 +3010,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actions:
-  - eventName: HitFrameWindowOpened
+  - eventName: AnimationFrameWindowOpened
     eventAction:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1038980384}
-          m_MethodName: HitFrameOpened
+        - m_Target: {fileID: 1038980386}
+          m_MethodName: AnimationFrameWindowOpened
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2966,12 +3027,29 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  - eventName: HitFrameWindowClosed
+  - eventName: AnimationFrameWindowClosed
     eventAction:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1038980384}
-          m_MethodName: HitFrameClosed
+        - m_Target: {fileID: 1038980386}
+          m_MethodName: AnimationFrameWindowClosed
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - eventName: CanAttackAgain
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1038980386}
+          m_MethodName: CanAttackAgain
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3010,8 +3088,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f7841df2ad16b42a9437f4c7216575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensivityX: 50
-  sensivityY: 50
+  sensivityX: 200
+  sensivityY: 200
   maxAngleY: 70
   minAngleY: -30
   invertX: 0

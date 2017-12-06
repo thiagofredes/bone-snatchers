@@ -15,26 +15,6 @@ public class Dead : PlayerState
 		this.player.animator.SetTrigger ("Die");
 	}
 
-	public override void AnimationFrameWindowClosed ()
-	{
-		throw new System.NotImplementedException ();
-	}
-
-	public override void AnimationFrameWindowOpened ()
-	{
-		throw new System.NotImplementedException ();
-	}
-
-	public override void HitFrameClosed ()
-	{
-		throw new System.NotImplementedException ();
-	}
-
-	public override void HitFrameOpened ()
-	{
-		throw new System.NotImplementedException ();
-	}
-
 	public override void Reset ()
 	{
 		throw new System.NotImplementedException ();
@@ -43,5 +23,13 @@ public class Dead : PlayerState
 	public override void Update ()
 	{
 
+	}
+
+	public override void OnEnter ()
+	{
+	}
+
+	public override void OnExit ()
+	{
 	}
 }

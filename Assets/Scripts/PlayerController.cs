@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour, IDamaging, IDamageable
 
 	public MoveHitboxController hitboxController;
 
+	public ComboController comboController;
+
 	private PlayerState state;
 
 	private static PlayerController _instance;
@@ -67,28 +69,10 @@ public class PlayerController : MonoBehaviour, IDamaging, IDamageable
 	public void SetState (PlayerState state)
 	{
 		this.enabled = false;
+		this.state.OnExit ();
 		this.state = state;
+		this.state.OnEnter ();
 		this.enabled = true;
-	}
-
-	public void AnimationFrameWindowOpen ()
-	{
-		this.state.AnimationFrameWindowOpened ();
-	}
-
-	public void AnimationFrameWindowClosed ()
-	{
-		this.state.AnimationFrameWindowClosed ();
-	}
-
-	public void HitFrameOpened ()
-	{
-		this.state.HitFrameOpened ();
-	}
-
-	public void HitFrameClosed ()
-	{
-		this.state.HitFrameClosed ();
 	}
 
 	public void Damage (IDamageable other)

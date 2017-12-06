@@ -194,30 +194,37 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.56317294
-        functionName: AnimationEvent
-        data: HitFrameWindowOpened
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.6668938
-        functionName: AnimationEvent
-        data: HitFrameWindowClosed
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.1754386
+      - time: 0.33287966
         functionName: AnimationEvent
         data: AnimationFrameWindowOpened
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.70877194
+      - time: 0.36186346
+        functionName: AnimationEvent
+        data: HitFrameWindowOpened
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.40462336
+        functionName: AnimationEvent
+        data: HitFrameWindowClosed
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5408482
         functionName: AnimationEvent
         data: AnimationFrameWindowClosed
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.55204135
+        functionName: AnimationEvent
+        data: CanAttackAgain
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0

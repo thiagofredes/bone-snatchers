@@ -39,22 +39,12 @@ public class Running : PlayerState
 		}
 	}
 
-	public override void AnimationFrameWindowClosed ()
-	{
-		return;
-	}
-
-	public override void AnimationFrameWindowOpened ()
-	{
-		return;
-	}
-
-	public override void HitFrameClosed ()
+	public override void OnEnter ()
 	{
 		
 	}
 
-	public override void HitFrameOpened ()
+	public override void OnExit ()
 	{
 		
 	}
