@@ -12,6 +12,8 @@ public class ComboController : MonoBehaviour
 
 	public event Action ComboEnded;
 
+	public event Action WindowOpened;
+
 	public string[] animationTriggers;
 
 	public string missedWindowAnimationTrigger;
@@ -59,6 +61,9 @@ public class ComboController : MonoBehaviour
 		if (!openWindow) {
 			openWindow = true;
 			windowReached = false;
+			if (WindowOpened != null) {
+				WindowOpened ();
+			}
 		}
 	}
 

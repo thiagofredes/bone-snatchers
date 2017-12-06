@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fighting : PlayerState
+public class PlayerFighting : PlayerState
 {
 	private PlayerController player;
 
 	private bool canChangeLookDirection;
 
-	private int numTriggers;
-
-	public Fighting (PlayerController player)
+	public PlayerFighting (PlayerController player)
 	{
 		this.player = player;
 		canChangeLookDirection = false;
@@ -38,13 +36,13 @@ public class Fighting : PlayerState
 
 	private void OnWindowLost ()
 	{
-		this.player.SetState (new Running (this.player));
+		this.player.SetState (new PlayerRunning (this.player));
 	}
 
 	public override void Reset ()
 	{
 		this.canChangeLookDirection = false;
-		this.player.SetState (new Running (this.player));
+		this.player.SetState (new PlayerRunning (this.player));
 	}
 
 	public override void Update ()

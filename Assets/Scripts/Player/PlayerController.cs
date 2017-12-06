@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour, IDamaging, IDamageable
 
 	void Start ()
 	{
-		state = new Running (this);	
+		state = new PlayerRunning (this);	
 	}
 
 	void Update ()

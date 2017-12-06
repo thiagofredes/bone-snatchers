@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Running : PlayerState
+public class PlayerRunning : PlayerState
 {
 
 	private PlayerController player;
 
 
-	public Running (PlayerController player)
+	public PlayerRunning (PlayerController player)
 	{
 		this.player = player;
 	}
@@ -26,7 +26,7 @@ public class Running : PlayerState
 			Vector3 movement = ThirdPersonCameraController.CameraForwardProjectionOnGround * vertical + ThirdPersonCameraController.CameraRightProjectionOnGround * horizontal;
 
 			if (Input.GetKey (KeyCode.Space)) {			
-				this.player.SetState (new Fighting (this.player));
+				this.player.SetState (new PlayerFighting (this.player));
 			}
 
 			if (movement.magnitude < 0.1f)

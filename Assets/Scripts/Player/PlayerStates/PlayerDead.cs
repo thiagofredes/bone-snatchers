@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dead : PlayerState
+public class PlayerDead : PlayerState
 {
 
 	private PlayerController player;
 
-	public Dead (PlayerController enemy)
+	public PlayerDead (PlayerController enemy)
 	{
 		this.player = enemy;
 		this.player.characterController.enabled = false;
