@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveHitboxController : MonoBehaviour
+public class HitboxController : MonoBehaviour
 {
 
 	[System.Serializable]
@@ -47,5 +47,10 @@ public class MoveHitboxController : MonoBehaviour
 	public void DisableHitbox (string parentTrigger)
 	{
 		SetHitbox (parentTrigger, false);
+	}
+
+	public void DisableAllHitboxes ()
+	{
+		SetHitboxes (false);
 	}
 }

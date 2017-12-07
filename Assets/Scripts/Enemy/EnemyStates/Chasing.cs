@@ -15,8 +15,7 @@ public class Chasing : EnemyState
 		this.enemy = enemy;
 		this.enemy.navMeshAgent.speed = this.enemy.chasingSpeed;
 		this.enemy.navMeshAgent.acceleration = this.enemy.chasingAcceleration;
-		this.enemy.animator.SetFloat ("MoveSpeed", 1f);
-		this.enemy.animator.SetBool ("Fighting", false);
+		this.enemy.animator.SetFloat ("Forward", 1f);
 		followPlayerCoroutine = this.enemy.StartCoroutine (FollowPlayer ());
 	}
 
@@ -24,8 +23,7 @@ public class Chasing : EnemyState
 	{
 		this.enemy.navMeshAgent.speed = this.enemy.chasingSpeed;
 		this.enemy.navMeshAgent.acceleration = this.enemy.chasingAcceleration;
-		this.enemy.animator.SetFloat ("MoveSpeed", 1f);
-		this.enemy.animator.SetBool ("Fighting", false);
+		this.enemy.animator.SetFloat ("Forward", 1f);
 		if (followPlayerCoroutine != null) {
 			enemy.StopCoroutine (followPlayerCoroutine);
 		}
@@ -55,7 +53,7 @@ public class Chasing : EnemyState
 
 	public override void Update ()
 	{
-		if (Vector3.Distance (enemy.transform.position, PlayerController.PlayerTransform.position) < 2f) {
+		if (Vector3.Distance (enemy.transform.position, PlayerController.PlayerTransform.position) < enemy.stoppingDistance) {
 			enemy.StopCoroutine (followPlayerCoroutine);
 			enemy.navMeshAgent.ResetPath ();
 			enemy.navMeshAgent.velocity = Vector3.zero;

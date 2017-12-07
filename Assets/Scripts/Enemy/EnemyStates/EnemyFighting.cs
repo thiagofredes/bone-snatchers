@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Diagnostics;
 
 public class EnemyFighting : EnemyState
 {
@@ -28,6 +29,10 @@ public class EnemyFighting : EnemyState
 	public override void Update ()
 	{
 		this.enemy.LookAtPlayer ();
+		if (Vector3.Distance (PlayerController.PlayerTransform.position, enemy.transform.position) > enemy.fightingDistance) {
+			Reset ();
+			enemy.SetState (new Chasing (this.enemy));
+		}
 		if (Time.time >= nextTimeToAttack && !performingCombo) {
 			enemy.comboController.Attack ();
 			performingCombo = true;

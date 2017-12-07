@@ -20,7 +20,9 @@ public class EnemyController : MonoBehaviour, IDamageable, IDamaging
 
 	public float chasingAcceleration = 10f;
 
-	public MoveHitboxController hitboxController;
+	public float stoppingDistance = 2f;
+
+	public float fightingDistance = 3f;
 
 	public float timeToAttack = 5f;
 
@@ -43,7 +45,7 @@ public class EnemyController : MonoBehaviour, IDamageable, IDamaging
 
 	void Start ()
 	{
-		SetState (new EnemyFighting (this));
+		SetState (new Chasing (this));
 	}
 
 	// Update is called once per frame

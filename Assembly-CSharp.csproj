@@ -55,9 +55,9 @@
      <Compile Include="Assets\Scripts\AnimationEventReceiver.cs" />
      <Compile Include="Assets\Scripts\AttackAnimationSystem\ComboController.cs" />
      <Compile Include="Assets\Scripts\AttackAnimationSystem\Hitbox.cs" />
+     <Compile Include="Assets\Scripts\AttackAnimationSystem\HitboxController.cs" />
      <Compile Include="Assets\Scripts\AttackAnimationSystem\IDamageable.cs" />
      <Compile Include="Assets\Scripts\AttackAnimationSystem\IDamaging.cs" />
-     <Compile Include="Assets\Scripts\AttackAnimationSystem\MoveHitboxController.cs" />
      <Compile Include="Assets\Scripts\CursorCapture.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Enemy\Enemystate.cs" />

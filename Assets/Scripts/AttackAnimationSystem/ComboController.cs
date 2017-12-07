@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Runtime.InteropServices;
 
 public class ComboController : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class ComboController : MonoBehaviour
 	public string[] animationTriggers;
 
 	public string missedWindowAnimationTrigger;
+
+	public HitboxController hitboxController;
 
 	public Animator animator;
 
@@ -43,6 +46,7 @@ public class ComboController : MonoBehaviour
 		openWindow = false;
 		windowReached = false;
 		canAttack = false;
+		hitboxController.DisableAllHitboxes ();
 	}
 
 	public void Attack ()
@@ -65,6 +69,16 @@ public class ComboController : MonoBehaviour
 				WindowOpened ();
 			}
 		}
+	}
+
+	public void HitFrameOpen ()
+	{
+		hitboxController.EnableHitbox (animationTriggers [currentTrigger - 1]);
+	}
+
+	public void HitFrameClosed ()
+	{
+		hitboxController.DisableHitbox (animationTriggers [currentTrigger - 1]);
 	}
 
 	public void AnimationFrameWindowClosed ()

@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour, IDamaging, IDamageable
 
 	public float movementSpeed;
 
-	public MoveHitboxController hitboxController;
+	public HitboxController hitboxController;
 
 	public ComboController comboController;
 
